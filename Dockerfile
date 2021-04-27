@@ -1,5 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8
 EXPOSE 8080
-ARG JAR_FILE=target/friends.jar
-ADD ${JAR_FILE} friends.jar
+ADD target/friends.jar friends.jar 
 ENTRYPOINT ["java","-jar","/friends.jar"]
