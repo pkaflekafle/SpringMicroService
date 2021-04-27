@@ -59,14 +59,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				 <configuration>
-					  <archive>
-					    <manifest>
-							 <!-- give full qualified name of your main class-->
-							<mainClass>com.wildbeancoffee.friends.FriendsApplication</mainClass>
-					    </manifest>
-					 </archive>
-				</configuration>  
 			</plugin>
 		</plugins>
 		</pluginManagement>
