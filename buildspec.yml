@@ -6,7 +6,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=053622233369.dkr.ecr.us-east-2.amazonaws.com/nodejspoc
+      - REPOSITORY_URI=053622233369.dkr.ecr.us-east-2.amazonaws.com/springMicroservicepoc
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)
   build:
     commands:
