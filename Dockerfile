@@ -1,4 +1,3 @@
-FROM openjdk:8
-EXPOSE  8080
-ADD /target/friends.jar friends.jar
-ENTRYPOINT ["java","-jar","/friends.jar"]
+FROM openjdk:8u111-jdk-alpine
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
