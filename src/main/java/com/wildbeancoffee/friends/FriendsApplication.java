@@ -10,3 +10,5 @@ public class FriendsApplication {
 		SpringApplication.run(FriendsApplication.class, args);
 	}
 }
+
+
