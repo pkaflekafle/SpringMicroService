@@ -13,7 +13,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
 public class HealthCheckController {
     @GetMapping("/ping")
     public String  ping() {
-        return "API Success by Prava";
+        return "API Success";
         }
 
 }
