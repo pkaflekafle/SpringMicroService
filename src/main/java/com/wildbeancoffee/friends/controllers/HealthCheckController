@@ -10,7 +10,7 @@ import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
 
 @RestController
-public class HealCheckController {
+public class HealthCheckController {
     @GetMapping("/ping")
     public String  ping() {
         return "API Success";
