@@ -10,7 +10,7 @@ phases:
       - aws --version
       - aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-     -  REPOSITORY_URI=053622233369.dkr.ecr.us-east-2.amazonaws.com/sbspringservice
+      - REPOSITORY_URI=053622233369.dkr.ecr.us-east-2.amazonaws.com/sbspringservice
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
@@ -26,8 +26,3 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo Writing image definitions file...
-      - printf '[{"name":"sbspringservicecontainer","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-      - cat imagedefinitions.json 
-artifacts:
-    files: imagedefinitions.json
