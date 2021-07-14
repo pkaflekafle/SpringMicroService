@@ -12,6 +12,7 @@ phases:
       - echo "REPOSITORY_URI is ${REPOSITORY_URI}"
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - pip install docker-compose
   build:
     commands:
       - echo Build started on `date`
