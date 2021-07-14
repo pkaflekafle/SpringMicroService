@@ -18,7 +18,8 @@ phases:
       - echo Build started on `date`
       - mvn package spring-boot:repackage -Dmaven.test.skip=true
       - echo Building the Docker image...
-      - docker build -t $IMAGE_TAG:latest .
+      - docker build -t ${IMAGE_TAG}:latest .
+      - print(${IMAGE_TAG})
       - echo Tagging Docker image...
       - docker tag ${IMAGE_TAG}:latest ${REPOSITORY_URI}:latest
   post_build:
